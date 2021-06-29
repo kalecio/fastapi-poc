@@ -1,2 +1,2 @@
-# flask-api
-Flask API to make a proof of concept
+# Fastapi
+Fastapi API to make a proof of concept
