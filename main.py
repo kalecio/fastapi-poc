@@ -29,3 +29,7 @@ async def add_post(post: Post):
     postdb.append(post.dict())
     return postdb[-1]
 
+@app.get("/blog/{post_id}")
+async def get_post(post_id: int):
+    post = post_id - 1
+    return postdb[post]
