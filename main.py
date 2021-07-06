@@ -23,3 +23,9 @@ async def root():
 @app.get("/blog")
 async def get_posts():
     return postdb
+
+@app.post("/blog")
+async def add_post(post: Post):
+    postdb.append(post.dict())
+    return postdb[-1]
+
