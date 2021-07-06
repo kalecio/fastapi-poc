@@ -33,3 +33,8 @@ async def add_post(post: Post):
 async def get_post(post_id: int):
     post = post_id - 1
     return postdb[post]
+
+@app.post("/blog/{post_id}")
+async def update_post(post_id: int, post: Post):
+    postdb[post_id - 1] = post
+    return {"message": "Post has been updated succesfully"}
