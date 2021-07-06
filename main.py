@@ -38,3 +38,8 @@ async def get_post(post_id: int):
 async def update_post(post_id: int, post: Post):
     postdb[post_id - 1] = post
     return {"message": "Post has been updated succesfully"}
+
+@app.delete("/blog/{post_id}")
+async def delete_post(post_id: int):
+    postdb.pop(post_id - 1)
+    return {"message": "Post has been deleted succesfully"}
